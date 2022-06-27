@@ -1,18 +1,19 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from "@angular/core";
+import {LoginComponent} from "../login/login.component";
+import {BrowserModule} from "@angular/platform-browser";
+import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";
-import {MatButtonModule} from '@angular/material/button';
-import {LoginComponent} from "./login.component";
 import {AppCommonModule} from "../common/common.module";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
-
+import {PatientComponent} from "./patient.component";
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
-    LoginComponent
+    PatientComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +23,9 @@ import {FlexLayoutModule} from "@angular/flex-layout";
     MatInputModule,
     FormsModule,
     MatCardModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTableModule
   ],
 })
-export class LoginModule {
+export class PatientModule {
 }

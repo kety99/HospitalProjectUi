@@ -11,6 +11,7 @@ import {FormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
 import {LoginModule} from "./login/login.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {PatientModule} from "./patient/patient.module";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     AppCommonModule,
     LoginModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PatientModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
