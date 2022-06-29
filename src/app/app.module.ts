@@ -12,6 +12,7 @@ import {MatInputModule} from "@angular/material/input";
 import {LoginModule} from "./login/login.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PatientModule} from "./patient/patient.module";
+import {RegistrationModule} from "./registration/registration.module";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {PatientModule} from "./patient/patient.module";
     AppCommonModule,
     LoginModule,
     BrowserAnimationsModule,
-    PatientModule
+    PatientModule,
+    RegistrationModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
