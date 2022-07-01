@@ -13,6 +13,8 @@ import {LoginModule} from "./login/login.module";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PatientModule} from "./patient/patient.module";
 import {RegistrationModule} from "./registration/registration.module";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import {RegistrationModule} from "./registration/registration.module";
     LoginModule,
     BrowserAnimationsModule,
     PatientModule,
-    RegistrationModule
+    RegistrationModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

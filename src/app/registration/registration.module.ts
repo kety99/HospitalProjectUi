@@ -10,22 +10,26 @@ import {MatCardModule} from "@angular/material/card";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {MatTableModule} from "@angular/material/table";
 import {RegistrationComponent} from "./registration.component";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
 declarations: [
   RegistrationComponent
 ],
   imports: [
-  BrowserModule,
-  MatButtonModule,
-  HttpClientModule,
-  AppCommonModule,
-  MatInputModule,
-  FormsModule,
-  MatCardModule,
-  FlexLayoutModule,
-  MatTableModule
-],
+    BrowserModule,
+    MatButtonModule,
+    HttpClientModule,
+    AppCommonModule,
+    MatInputModule,
+    FormsModule,
+    MatCardModule,
+    FlexLayoutModule,
+    MatTableModule,
+    MatDatepickerModule,
+    MatNativeDateModule
+  ],
 })
 export class RegistrationModule {
 }

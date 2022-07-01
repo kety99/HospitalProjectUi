@@ -1,9 +1,9 @@
-<div>
-  <mat-card>
-    <mat-card-title>
+<div fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 50px;">
+  <mat-card style="padding:5px; width:70%">
+    <mat-card-title fxLayoutAlign="center center" style="padding-bottom: 15px; padding-top: 30px;">
       Register New User!
     </mat-card-title>
-    <mat-card-content>
+    <mat-card-content fxLayout="column" style="margin-right:25%; margin-left:25%;">
       <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" [(ngModel)]="user.username">
@@ -12,6 +12,43 @@
         <mat-label>Password</mat-label>
         <input type="password" matInput placeholder="Password" [(ngModel)]="user.password">
       </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" [(ngModel)]="user.firstname">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Middle Name</mat-label>
+        <input matInput placeholder="Middle Name" [(ngModel)]="user.middlename">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" [(ngModel)]="user.lastname">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="datepicker">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker>
+          <mat-datepicker-actions>
+            <button mat-button matDatepickerCancel>Cancel</button>
+            <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+          </mat-datepicker-actions>
+        </mat-datepicker>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <input matInput placeholder="Gender" [(ngModel)]="user.sex">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Phone Number</mat-label>
+        <input matInput placeholder="Phone Number" [(ngModel)]="user.phoneNumber">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>E-mail</mat-label>
+        <input matInput placeholder="E-mail" [(ngModel)]="user.email">
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="margin-bottom: 50px; height: 50px;">Register!</button>
     </mat-card-content>
   </mat-card>
 </div>
