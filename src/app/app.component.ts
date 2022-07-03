@@ -14,9 +14,7 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.authService.login('admin', '123456').subscribe(res=>{
-      console.log(res);
-    });
+
   }
 
   onClick(){

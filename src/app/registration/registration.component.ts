@@ -10,4 +10,8 @@ import {User} from "../model/user";
 export class RegistrationComponent {
   user: User = new User();
 
+  register() {
+    console.log(this.user);
+  }
+
 }

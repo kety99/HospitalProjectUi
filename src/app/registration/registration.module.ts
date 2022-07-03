@@ -12,6 +12,7 @@ import {MatTableModule} from "@angular/material/table";
 import {RegistrationComponent} from "./registration.component";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
 declarations: [
@@ -28,7 +29,8 @@ declarations: [
     FlexLayoutModule,
     MatTableModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSelectModule
   ],
 })
 export class RegistrationModule {

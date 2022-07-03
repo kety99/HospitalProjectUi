@@ -16,7 +16,10 @@ export class LoginComponent {
 
   login(): void {
     this.authService.login(this.username, this.password).subscribe(res => {
-      console.log(res);
+      this.authService.token = res.token;
+      this.authService.userDetails().subscribe(res => {
+        console.log(res);
+      })
     });
   }
 }
