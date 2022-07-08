@@ -15,6 +15,7 @@ import {PatientModule} from "./patient/patient.module";
 import {RegistrationModule} from "./registration/registration.module";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {CommonModule} from "@angular/common";
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -38,6 +39,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatNativeDateModule,
     MatToolbarModule,
     FlexLayoutModule
+    MatNativeDateModule,
+    CommonModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

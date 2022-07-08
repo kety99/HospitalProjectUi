@@ -59,7 +59,26 @@
         <mat-label>E-mail</mat-label>
         <input matInput placeholder="E-mail" [(ngModel)]="user.email">
       </mat-form-field>
-      <button mat-raised-button color="primary" style="margin-bottom: 50px; height: 50px;" (click)="register()">Register!</button>
+      <mat-form-field appearance="outline" *ngIf="user.userRole === 'Doctor'|| user.userRole === 'Employee'">
+        <mat-label>Salary</mat-label>
+        <input matInput placeholder="Salary" [(ngModel)]="user.salary">
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="user.userRole === 'Doctor'">
+        <mat-label>Specialisation</mat-label>
+        <input matInput placeholder="Specialisation" [(ngModel)]="user.specialty">
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="user.userRole === 'Employee'">
+        <mat-label>Employee Type</mat-label>
+        <mat-select placeholder="EmployeeType" [(ngModel)]="user.employeetype">
+          <mat-option [value]="'Nurse'">Nurse</mat-option>
+          <mat-option [value]="'Support'">Support</mat-option>
+          <mat-option [value]="'Staff'">Staff</mat-option>
+          <mat-option [value]="'Registration'">Registration</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="margin-bottom: 50px; height: 50px;" (click)="register()">
+        Register!
+      </button>
     </mat-card-content>
   </mat-card>
 </div>

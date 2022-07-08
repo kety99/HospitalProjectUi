@@ -9,7 +9,7 @@ import { PatientService } from "./patient.service";
 })
 export class PatientComponent implements OnInit {
   patients: Array<Patient> = [];
-  columns: Array<string> = ['firstname', 'lastname'];
+  columns: Array<string> = ['firstName', 'lastName'];
 
   constructor(private patientService: PatientService) { }
 

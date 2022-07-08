@@ -13,6 +13,7 @@ import {RegistrationComponent} from "./registration.component";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
 import {MatSelectModule} from "@angular/material/select";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
 declarations: [
@@ -30,7 +31,8 @@ declarations: [
     MatTableModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatSelectModule
+    MatSelectModule,
+    CommonModule
   ],
 })
 export class RegistrationModule {
