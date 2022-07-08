@@ -47,15 +47,15 @@ export class AuthService {
   }
 
   public registerDoctor(user: any): Observable<User> {
-    let url = '/api/doctor';
+    let url = '/api/doctors';
 
     let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
 
     return this.http.post<User>(url, user, { headers: headers });
   }
 
-  public registerEmplyee(user: any): Observable<User> {
-    let url = '/api/employee';
+  public registerEmployee(user: any): Observable<User> {
+    let url = '/api/employees';
 
     let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
 
