@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 import { Patient } from "../model/patient";
 import { PatientService } from "./patient.service";
 
@@ -9,9 +10,9 @@ import { PatientService } from "./patient.service";
 })
 export class PatientComponent implements OnInit {
   patients: Array<Patient> = [];
-  columns: Array<string> = ['firstName', 'lastName'];
+  columns: Array<string> = ['personalNumber', 'firstName', 'middleName', 'lastName'];
 
-  constructor(private patientService: PatientService) { }
+  constructor(private patientService: PatientService, private router: Router) { }
 
   ngOnInit(): void {
     this.patientService.getAll().subscribe({
@@ -21,6 +22,10 @@ export class PatientComponent implements OnInit {
 
       }
     })
+  }
+
+  details(patient) {
+    this.router.navigate(['/patients/details/' + patient.id]);
   }
 
 }

@@ -11,13 +11,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { PatientComponent } from "./patient.component";
 import { MatTableModule } from "@angular/material/table";
 import { RouterModule } from "@angular/router";
-import { PatientDetailsComponent } from "./details/patient-details.component";
 import { PatientService } from "./patient.service";
 
 @NgModule({
   declarations: [
     PatientComponent,
-    PatientDetailsComponent
   ],
   imports: [
     BrowserModule,

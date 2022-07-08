@@ -38,7 +38,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
     MatNativeDateModule,
     CommonModule
   ],
