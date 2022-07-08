@@ -1,5 +1,6 @@
-import {Component, OnInit} from "@angular/core";
-import {Patient} from "../model/patient";
+import { Component, OnInit } from "@angular/core";
+import { Patient } from "../model/patient";
+import { PatientService } from "./patient.service";
 
 @Component({
   selector: 'app-patient',
@@ -10,13 +11,16 @@ export class PatientComponent implements OnInit {
   patients: Array<Patient> = [];
   columns: Array<string> = ['firstname', 'lastname'];
 
+  constructor(private patientService: PatientService) { }
+
   ngOnInit(): void {
-    for (let i = 0; i < 10; i++) {
-      let patient = new Patient();
-      patient.firstname = 'patient ' + i;
-      patient.lastname = 'Petrov ' + i;
-      this.patients.push(patient);
-    }
+    this.patientService.getAll().subscribe({
+      next: (res) => {
+        this.patients = res;
+      }, error: (err) => {
+
+      }
+    })
   }
 
 }

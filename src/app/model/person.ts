@@ -1,9 +1,9 @@
 import {HospitalObject} from "./hospital-object";
 
 export class Person extends HospitalObject {
-  firstname: string;
-  lastname: string;
-  middlename: string;
+  firstName: string;
+  lastName: string;
+  middleName: string;
   birthDate: string;
   personalNumber: string;
   sex: string;

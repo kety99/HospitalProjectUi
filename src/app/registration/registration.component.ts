@@ -20,7 +20,6 @@ export class RegistrationComponent {
 
   register() {
     console.log(this.user);
-    this.user.userRole = 'Admin';
 
     let success = (res) => { };
     let error = (err) => { };
@@ -32,9 +31,6 @@ export class RegistrationComponent {
     } else if (this.user.userRole === 'Patient') {
       this.authService.registerPatient(this.user).subscribe({ next: success, error: error });
     }
-    this.authService.register(this.user).subscribe(res => {
-      console.log(res);
-    });
   }
 
   onRoleChange(event) {

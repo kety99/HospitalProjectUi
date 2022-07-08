@@ -12,6 +12,7 @@ import { PatientComponent } from "./patient.component";
 import { MatTableModule } from "@angular/material/table";
 import { RouterModule } from "@angular/router";
 import { PatientDetailsComponent } from "./details/patient-details.component";
+import { PatientService } from "./patient.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PatientDetailsComponent } from "./details/patient-details.component";
     MatCardModule,
     FlexLayoutModule,
     MatTableModule
-    ],
+  ],
+  providers: [PatientService]
 })
 export class PatientModule {
 }

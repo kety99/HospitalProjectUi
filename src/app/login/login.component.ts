@@ -20,7 +20,15 @@ export class LoginComponent {
       this.authService.token = res.token;
       this.authService.userDetails().subscribe(userDetails => {
         this.authService.user = userDetails;
-        this.router.navigate(['/registration']);
+        if (userDetails.userRole === 'Doctor') {
+          this.router.navigate(['/patients']);
+        } else if (userDetails.userRole === 'Patient') {
+          this.router.navigate(['/patients/details/' + userDetails.id]);
+        }else if (userDetails.userRole === 'Emplyee') {
+          this.router.navigate(['/patients']);
+        }else {
+          this.router.navigate(['/patients']);
+        }
       });
     }, err => {
       if (err['status'] === 401) {

@@ -1,1 +1,12 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" fxLayout="row" fxLayoutAlign="space-between center">
+  <div>
+    <h1>My Hospital</h1>
+  </div>
+  <div fxLayout="row" fxLayoutGap="15px">
+    <button mat-button routerLink="/registration">Register</button>
+    <button mat-button routerLink="/patients">Patients</button>
+  </div>
+</mat-toolbar>
+<div style="margin-top: 15px;">
+  <router-outlet></router-outlet>
+</div>

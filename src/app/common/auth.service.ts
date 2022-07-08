@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { User } from "../model/user";
+import { Patient } from "../model/patient";
 
 @Injectable()
 export class AuthService {
@@ -37,12 +38,12 @@ export class AuthService {
     return this.http.post<User>(url, user, { headers: headers });
   }
 
-  public registerPatient(user: any): Observable<User> {
+  public registerPatient(user: any): Observable<Patient> {
     let url = '/api/patients';
 
     let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
 
-    return this.http.post<User>(url, user, { headers: headers });
+    return this.http.post<Patient>(url, user, { headers: headers });
   }
 
   public registerDoctor(user: any): Observable<User> {
