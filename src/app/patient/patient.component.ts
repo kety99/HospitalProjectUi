@@ -8,13 +8,13 @@ import {Patient} from "../model/patient";
 })
 export class PatientComponent implements OnInit {
   patients: Array<Patient> = [];
-  columns: Array<string> = ['firstname', 'lastname'];
+  columns: Array<string> = ['firstName', 'lastName'];
 
   ngOnInit(): void {
     for (let i = 0; i < 10; i++) {
       let patient = new Patient();
-      patient.firstname = 'patient ' + i;
-      patient.lastname = 'Petrov ' + i;
+      patient.firstName = 'patient ' + i;
+      patient.lastName = 'Petrov ' + i;
       this.patients.push(patient);
     }
   }

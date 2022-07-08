@@ -15,6 +15,7 @@ import {PatientModule} from "./patient/patient.module";
 import {RegistrationModule} from "./registration/registration.module";
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatNativeDateModule} from "@angular/material/core";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {MatNativeDateModule} from "@angular/material/core";
     PatientModule,
     RegistrationModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    CommonModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]
