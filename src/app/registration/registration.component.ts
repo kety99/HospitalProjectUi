@@ -29,7 +29,7 @@ export class RegistrationComponent {
     if (this.user.userRole === 'Doctor') {
       this.authService.registerDoctor(this.user).subscribe({next: success, error: error});
     } else if (this.user.userRole === 'Employee') {
-      this.authService.registerEmplyee(this.user).subscribe({next: success, error: error});
+      this.authService.registerEmployee(this.user).subscribe({next: success, error: error});
     } else if (this.user.userRole === 'Patient') {
       this.authService.registerPatient(this.user).subscribe({next: success, error: error});
     }

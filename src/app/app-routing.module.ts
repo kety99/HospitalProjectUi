@@ -4,6 +4,8 @@ import { DetailsComponent } from './common/details/details.component';
 import { LoginComponent } from "./login/login.component";
 import { PatientComponent } from "./patient/patient.component";
 import { RegistrationComponent } from "./registration/registration.component";
+import {DoctorsComponent} from "./doctor/doctors.component";
+import {EmployeesComponent} from "./employees/employees.component";
 
 const routes: Routes = [
   {
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: ':type/details/:id',
     component: DetailsComponent,
+    pathMatch: 'full'
+  },{
+    path: 'doctors',
+    component: DoctorsComponent,
+    pathMatch: 'full'
+  },{
+    path: 'employees',
+    component: EmployeesComponent,
     pathMatch: 'full'
   }
 ];
