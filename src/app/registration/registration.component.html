@@ -5,6 +5,14 @@
     </mat-card-title>
     <mat-card-content fxLayout="column" style="margin-right:25%; margin-left:25%;">
       <mat-form-field appearance="outline">
+        <mat-label>User Type</mat-label>
+        <mat-select placeholder="User Type" [(ngModel)]="user.userRole" (ngModelChange)="onRoleChange($event)">
+          <mat-option [value]="'Doctor'">Doctor</mat-option>
+          <mat-option [value]="'Patient'">Patient</mat-option>
+          <mat-option [value]="'Employee'">Employee</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
         <mat-label>Username</mat-label>
         <input matInput placeholder="Username" [(ngModel)]="user.username">
       </mat-form-field>
@@ -39,8 +47,8 @@
       <mat-form-field appearance="outline">
         <mat-label>Sex</mat-label>
         <mat-select placeholder="Sex" [(ngModel)]="user.sex">
-          <mat-option [value]="'Male'">Male</mat-option>
-          <mat-option [value]="'Female'">Female</mat-option>
+          <mat-option [value]="'MALE'">Male</mat-option>
+          <mat-option [value]="'FEMALE'">Female</mat-option>
         </mat-select>
       </mat-form-field>
       <mat-form-field appearance="outline">

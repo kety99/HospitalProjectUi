@@ -1,29 +1,63 @@
-import {Injectable} from "@angular/core";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Observable} from "rxjs";
+import { Injectable } from "@angular/core";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { Observable } from "rxjs";
+import { User } from "../model/user";
 
 @Injectable()
 export class AuthService {
   token: string;
+  user: User;
 
   constructor(private http: HttpClient) {
   }
 
-  public login(username: string, password: string):Observable<any> {
+  public login(username: string, password: string): Observable<any> {
     let url = '/auth/token';
     let body = {
       username: username,
       password: password
     };
 
-    return this.http.post(url,body);
+    return this.http.post(url, body);
   }
 
-  public userDetails(){
+  public userDetails(): Observable<User> {
     let url = '/api/users/details';
 
     let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
 
-    return this.http.get(url, {headers: headers});
+    return this.http.get<User>(url, { headers: headers });
+  }
+
+  public register(user: User): Observable<User> {
+    let url = '/api/users/create';
+
+    let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
+
+    return this.http.post<User>(url, user, { headers: headers });
+  }
+
+  public registerPatient(user: any): Observable<User> {
+    let url = '/api/patients';
+
+    let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
+
+    return this.http.post<User>(url, user, { headers: headers });
+  }
+
+  public registerDoctor(user: any): Observable<User> {
+    let url = '/api/doctor';
+
+    let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
+
+    return this.http.post<User>(url, user, { headers: headers });
+  }
+
+  public registerEmplyee(user: any): Observable<User> {
+    let url = '/api/employee';
+
+    let headers = new HttpHeaders().set("Authorization", "Bearer " + this.token);
+
+    return this.http.post<User>(url, user, { headers: headers });
   }
 }
