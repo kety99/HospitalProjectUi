@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Doctor} from "../model/doctor";
 import {Employee} from "../model/employee";
+import {Patient} from "../model/patient";
 
 @Injectable()
 export class EmployeesService {
@@ -26,5 +27,11 @@ export class EmployeesService {
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
 
     return this.http.get<Employee>(url, { headers: headers });
+  }
+  save(employee): Observable<Employee> {
+    let url = '/api/employees';
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
+
+    return this.http.post<Employee>(url, employee, {headers: headers});
   }
 }

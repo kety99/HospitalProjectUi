@@ -1,7 +1,7 @@
 <div fxLayout="column" fxLayoutAlign="center center" style="padding-bottom: 50px;">
   <mat-card style="padding:5px; width:70%">
     <mat-card-title fxLayoutAlign="center center" style="padding-bottom: 15px; padding-top: 30px;">
-      Register New User!
+      Details!
     </mat-card-title>
     <mat-card-content fxLayout="column" style="margin-right:25%; margin-left:25%;">
       <mat-form-field appearance="outline">
@@ -64,6 +64,17 @@
           <mat-option [value]="'Registration'">Registration</mat-option>
         </mat-select>
       </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="entity.userRole === 'Patient'">
+        <mat-label>Illness Info</mat-label>
+        <textarea matInput placeholder="Illness Info" [(ngModel)]="entity.illnessInfo"></textarea>
+      </mat-form-field>
+      <mat-form-field appearance="outline" *ngIf="entity.userRole === 'Patient'">
+        <mat-label>Treatment Info</mat-label>
+        <textarea matInput placeholder="Treatment Info" [(ngModel)]="entity.treatmentInfo"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" style="margin-bottom: 50px; height: 50px;" (click)="save()">
+        Save!
+      </button>
     </mat-card-content>
   </mat-card>
 </div>

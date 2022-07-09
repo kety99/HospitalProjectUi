@@ -1,5 +1,5 @@
 import {Component, OnInit} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Doctor} from "src/app/model/doctor";
 import {Employee} from "src/app/model/employee";
 import {PatientService} from "src/app/patient/patient.service";
@@ -16,7 +16,11 @@ export class DetailsComponent implements OnInit {
 
   entity: Doctor | Patient | Employee;
 
-  constructor(private route: ActivatedRoute, private patientService: PatientService, private doctorsService: DoctorsService, private employeesService: EmployeesService) {
+  constructor(private route: ActivatedRoute,
+              private patientService: PatientService,
+              private doctorsService: DoctorsService,
+              private employeesService: EmployeesService,
+              private router: Router) {
   }
 
 
@@ -28,7 +32,7 @@ export class DetailsComponent implements OnInit {
             this.entity = res;
           }
         })
-      }else if (params['type'] === 'doctors') {
+      } else if (params['type'] === 'doctors') {
         this.doctorsService.getById(params['id']).subscribe({
           next: (res) => {
             this.entity = res;
@@ -42,6 +46,22 @@ export class DetailsComponent implements OnInit {
         })
       }
     })
+  }
+
+  save() {
+    if (this.entity.userRole === 'Patient') {
+      this.patientService.save(this.entity).subscribe(res => {
+        this.router.navigate(['/patients'])
+      });
+    } else if (this.entity.userRole === 'Employee') {
+      this.employeesService.save(this.entity).subscribe(res => {
+        this.router.navigate(['/employees'])
+      });
+    } else if (this.entity.userRole === 'Doctor') {
+      this.doctorsService.save(this.entity).subscribe(res => {
+        this.router.navigate(['/doctors'])
+      });
+    }
   }
 
 

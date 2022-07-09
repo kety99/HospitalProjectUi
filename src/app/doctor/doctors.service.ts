@@ -27,4 +27,11 @@ export class DoctorsService {
     return this.http.get<Doctor>(url, { headers: headers });
   }
 
+  save(doctor): Observable<Doctor> {
+    let url = '/api/doctors';
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
+
+    return this.http.post<Doctor>(url, doctor, {headers: headers});
+  }
+
 }

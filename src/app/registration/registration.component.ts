@@ -5,6 +5,7 @@ import {Employee} from "../model/employee";
 import {Patient} from "../model/patient";
 import {User} from "../model/user";
 import {Ward} from "../model/ward";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-registration',
@@ -14,7 +15,7 @@ import {Ward} from "../model/ward";
 export class RegistrationComponent {
   user: User | Doctor | Employee | Patient = new User();
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
 
   }
 
@@ -22,6 +23,13 @@ export class RegistrationComponent {
     console.log(this.user);
 
     let success = (res) => {
+      if(this.user.userRole === 'Patient'){
+        this.router.navigate(['/patients']);
+      } else if(this.user.userRole === 'Employee'){
+        this.router.navigate(['/employees']);
+      } else if(this.user.userRole === 'Doctor'){
+        this.router.navigate(['/doctors']);
+      }
     };
     let error = (err) => {
     };

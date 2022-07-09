@@ -1,8 +1,8 @@
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
-import { AuthService } from "../common/auth.service";
-import { Patient } from "../model/patient";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
+import {AuthService} from "../common/auth.service";
+import {Patient} from "../model/patient";
 
 @Injectable()
 export class PatientService {
@@ -16,7 +16,7 @@ export class PatientService {
 
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
 
-    return this.http.get<Array<Patient>>(url, { headers: headers });
+    return this.http.get<Array<Patient>>(url, {headers: headers});
   }
 
   getById(id: string): Observable<Patient> {
@@ -24,7 +24,14 @@ export class PatientService {
 
     let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
 
-    return this.http.get<Patient>(url, { headers: headers });
+    return this.http.get<Patient>(url, {headers: headers});
+  }
+
+  save(patient): Observable<Patient> {
+    let url = '/api/patients';
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
+
+    return this.http.post<Patient>(url, patient, {headers: headers});
   }
 
 }
