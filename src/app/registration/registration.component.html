@@ -65,11 +65,11 @@
       </mat-form-field>
       <mat-form-field appearance="outline" *ngIf="user.userRole === 'Doctor'">
         <mat-label>Specialisation</mat-label>
-        <input matInput placeholder="Specialisation" [(ngModel)]="user.specialty">
+        <input matInput placeholder="Specialisation" [(ngModel)]="user.specialisation">
       </mat-form-field>
       <mat-form-field appearance="outline" *ngIf="user.userRole === 'Employee'">
         <mat-label>Employee Type</mat-label>
-        <mat-select placeholder="EmployeeType" [(ngModel)]="user.employeetype">
+        <mat-select placeholder="EmployeeType" [(ngModel)]="user.employeeType">
           <mat-option [value]="'Nurse'">Nurse</mat-option>
           <mat-option [value]="'Support'">Support</mat-option>
           <mat-option [value]="'Staff'">Staff</mat-option>

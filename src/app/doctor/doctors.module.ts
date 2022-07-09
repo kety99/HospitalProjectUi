@@ -1,6 +1,5 @@
 import {NgModule} from "@angular/core";
-import {PatientComponent} from "../patient/patient.component";
-import {PatientDetailsComponent} from "../patient/details/patient-details.component";
+
 import {BrowserModule} from "@angular/platform-browser";
 import {MatButtonModule} from "@angular/material/button";
 import {HttpClientModule} from "@angular/common/http";

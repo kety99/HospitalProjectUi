@@ -7,13 +7,23 @@
     <!-- Weight Column -->
     <ng-container matColumnDef="firstName">
       <th mat-header-cell *matHeaderCellDef> First Name </th>
-      <td mat-cell *matCellDef="let doctors"> {{doctors.firstName}} </td>
+      <td mat-cell *matCellDef="let doctors"><div class="table-link" (click)="details(doctors)">{{doctors.firstName}}</div></td>
     </ng-container>
 
     <!-- Symbol Column -->
     <ng-container matColumnDef="lastName">
       <th mat-header-cell *matHeaderCellDef> Last Name </th>
       <td mat-cell *matCellDef="let doctors"> {{doctors.lastName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="middleName">
+      <th mat-header-cell *matHeaderCellDef> Middle Name </th>
+      <td mat-cell *matCellDef="let doctors"> {{doctors.middleName}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="specialisation">
+      <th mat-header-cell *matHeaderCellDef> Specialisation </th>
+      <td mat-cell *matCellDef="let doctors"> {{doctors.specialisation}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columns"></tr>

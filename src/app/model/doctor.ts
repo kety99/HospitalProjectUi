@@ -4,7 +4,7 @@ import {User} from "./user";
 
 export class Doctor extends User{
   salary: number;
-  specialty: string;
+  specialisation: string;
   ward: Ward;
   patients: Array<Patient>
 

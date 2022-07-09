@@ -2,7 +2,7 @@ import {Ward} from "./ward";
 import {User} from "./user";
 
 export class Employee extends User{
-  employeetype: string;
+  employeeType: string;
   salary: number;
   ward: Ward;
 }

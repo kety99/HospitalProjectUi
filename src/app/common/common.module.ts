@@ -9,6 +9,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DetailsComponent } from './details/details.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { DetailsComponent } from './details/details.component';
     FormsModule,
     MatCardModule,
     FlexLayoutModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [AuthService]
 })

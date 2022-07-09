@@ -19,5 +19,12 @@ export class DoctorsService {
 
     return this.http.get<Array<Doctor>>(url, { headers: headers });
   }
+  getById(id: string): Observable<Doctor> {
+    let url = '/api/doctors/' + id;
+
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
+
+    return this.http.get<Doctor>(url, { headers: headers });
+  }
 
 }

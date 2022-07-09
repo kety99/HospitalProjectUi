@@ -20,4 +20,11 @@ export class EmployeesService {
     return this.http.get<Array<Employee>>(url, { headers: headers });
   }
 
+  getById(id: string) :Observable<Employee>{
+    let url = '/api/employees/' + id;
+
+    let headers = new HttpHeaders().set('Authorization', 'Bearer ' + this.authService.token);
+
+    return this.http.get<Employee>(url, { headers: headers });
+  }
 }
